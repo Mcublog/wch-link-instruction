@@ -36,7 +36,7 @@ Next, we try to connect to target using SWD transport and target, in my case thi
 
 For testing some scripts and etc may be helpfull manual working with adapter.
 
-* A telnet connection must be established to send a [command](https://openocd.org/doc/html/General-Commands.html)to the adapter. By default this is port 4444.
+* A telnet connection must be established to send a [command](https://openocd.org/doc/html/General-Commands.html) to the adapter. By default this is port 4444.
 After connecting the adapter to the target, run the script below:
 
 ```bash
