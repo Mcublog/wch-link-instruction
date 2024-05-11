@@ -1,0 +1,67 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cmake",
+            "label": "CMake: build active target",
+            "command": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "type": "cmake",
+            "label": "CMake: clean rebuild active",
+            "command": "cleanRebuild",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "Delete: build dir",
+            "type": "shell",
+            "windows": {
+                "command": "rm",
+                "args": [
+                    "build",
+                    "-r",
+                    "-force"
+                ]
+            },
+            "linux": {
+                "command": "rm",
+                "args": [
+                    "-rf",
+                    "build"
+                ]
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "type": "shell",
+            "dependsOn": "CMake: build active target",
+            "label": "OpenOcd: flash",
+            "options": {
+                "cwd": "${workspaceRoot}"
+            },
+            "command": "openocd",
+            "args": [
+                "-f",
+                "interface/wch-cmsis-dap.cfg",
+                "-f",
+                "target/stm32f4x.cfg",
+                "-c", "program ${command:cmake.launchTargetPath} verify reset exit"
+            ],
+            "group": "test"
+        }
+    ]
+}
