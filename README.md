@@ -74,3 +74,8 @@ Check [launch.json](/vscode/launch.json).
 For flashing, I wrote a special task in [tasks.json](/vscode/tasks.json).
 
 ![example](/docs/gif/Kooha-2024-05-11-12-14-34.gif)
+
+## Useful links
+
+* [My demo project](https://github.com/Mcublog/ch32f205_gcc_demo) for ch32f205 chip
+* [List of svd](https://github.com/ch32-rs/ch32-rs/tree/ce9d179930ba5b8a7ac53addcc2c3255a6034d0e/svd/vendor) files
